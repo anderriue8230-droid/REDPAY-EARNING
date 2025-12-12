@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const phone = document.getElementById("phone").value.trim();
     const email = document.getElementById("email").value.trim();
     const pwd = document.getElementById("password").value.trim();
-    const country = document.getElementById("countryLabel").value;
+    const country = document.getElementById("countryLabel").value.trim();
 
     // ================
     // SIGN UP MODE
