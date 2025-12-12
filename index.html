@@ -1,80 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>RedPay — Login / Signup</title>
-<link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedPay - Login / Signup</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<div class="wrapper">
+<div class="container">
 
-  <div class="brand">
-    <div class="logo">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-        <rect width="24" height="24" rx="6" fill="#0f0f0f"/>
-        <path d="M7 6h4c2.2 0 3.5 1 3.5 3 0 1.3-.8 2.2-1.9 2.6L17 16H13l-1-2H9v2H7V6z" fill="#ff4b4b"/>
-      </svg>
-    </div>
-    <div style="font-weight:700; font-size:15px;">RedPay</div>
-    <div class="tag">Your gateway to seamless payments</div>
-  </div>
-
-  <section class="card">
-
-    <h1>Get Started</h1>
-    <p class="subtitle">Create an account or sign in</p>
-
-    <div class="toggle">
-      <button id="tabSignup" class="active" type="button">Sign Up</button>
-      <button id="tabSignin" type="button">Sign In</button>
+    <div class="tabs">
+        <button id="tabSignup" class="active">Sign Up</button>
+        <button id="tabSignin">Sign In</button>
     </div>
 
-    <form id="authForm" autocomplete="on" novalidate>
+    <form id="authForm">
 
-      <div class="row" id="nameRow">
-        <div class="field">
-          <label for="firstName">First Name</label>
-          <input id="firstName" type="text" class="input" />
+        <div id="nameRow">
+            <div class="field">
+                <label>First Name</label>
+                <input id="firstName" type="text">
+            </div>
+
+            <div class="field">
+                <label>Last Name</label>
+                <input id="lastName" type="text">
+            </div>
         </div>
 
         <div class="field">
-          <label for="lastName">Last Name</label>
-          <input id="lastName" type="text" class="input" />
+            <label>Phone</label>
+            <input id="phone" type="tel">
         </div>
-      </div>
 
-      <div class="field">
-        <label for="phone">Phone</label>
-        <input id="phone" type="tel" class="input" />
-      </div>
+        <div class="field">
+            <label>Email</label>
+            <input id="email" type="email">
+        </div>
 
-      <div class="field">
-        <label for="email">Email</label>
-        <input id="email" type="email" class="input" />
-      </div>
+        <div class="field">
+            <label>Password</label>
+            <input id="password" type="password">
+        </div>
 
-      <div class="field">
-        <label for="password">Password</label>
-        <input id="password" type="password" class="input" />
-      </div>
+        <div class="field">
+            <label>Country</label>
+            <select id="countryLabel">
+                <option value="Nigeria">Nigeria</option>
+                <option value="United States">United States</option>
+                <option value="United Kingdom">United Kingdom</option>
+            </select>
+        </div>
 
-      <div class="field">
-        <label>Country</label>
-        <select id="countryLabel" class="input">
-          <option>Nigeria</option>
-          <option>United States</option>
-          <option>United Kingdom</option>
-        </select>
-      </div>
-
-      <button class="submit" type="submit">Create account</button>
+        <button class="submit" type="submit">Create account</button>
 
     </form>
-
-  </section>
 </div>
 
 <script src="main.js"></script>
