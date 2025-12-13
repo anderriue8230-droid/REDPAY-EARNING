@@ -47,27 +47,28 @@
 <div class="text" id="statusText">Initiating</div>
 
 <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const nextPage = urlParams.get('next') || 'instructions';
+    
+  const urlParams = new URLSearchParams(window.location.search);
+  const nextPage = urlParams.get('next') || 'instructions';
 
-    setTimeout(() => {
-        document.getElementById("statusText").textContent = "Verifying";
-    }, 1000);
+  setTimeout(() => {
+    document.getElementById("statusText").textContent = "Verifying";
+  }, 1000);
 
-    setTimeout(() => {
-        document.getElementById("statusText").textContent = "Processing";
-    }, 2000);
+  setTimeout(() => {
+    document.getElementById("statusText").textContent = "Processing";
+  }, 2000);
 
-    // After 5 seconds total, redirect based on next parameter
-    setTimeout(() => {
-        if (nextPage === 'failed') {
-            window.location.href = 'transaction-failed.html';
-        } else if (nextPage === 'confirmed') {
-        } else {
-            window.location.href = 'payment-instructions.html';
-        }
-    }, 5000);
+  // Redirect after 5 seconds
+  setTimeout(() => {
+    if (nextPage === 'failed') {
+      window.location.href = 'transaction-failed.html';
+    } 
+    else if (nextPage === 'confirmed') {
+      window.location.href = 'payment-not-confirmed.html';
+    } 
+    else {
+      window.location.href = 'payment-instructions.html';
+    }
+  }, 5000);
 </script>
-
-</body>
-</html>
