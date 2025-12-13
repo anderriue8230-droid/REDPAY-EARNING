@@ -347,16 +347,19 @@ hr.sep{
   <div class="grid-label">History</div>
   </a>
 
-<div class="grid-item support-item" onclick="toggleSupport()">
-  <div class="grid-icon">🗨️</div>
+<div class="grid-item" onclick="toggleSupport()">
+  <div class="grid-icon">💬</div>
   <div class="grid-label">Support</div>
 </div>
 
-<div id="supportMenu" class="support-menu">
-  <a href="https://wa.me/2348154206173" target="_blank">💬 WhatsApp</a>
-  <a href="https://t.me/Redpayagent1" target="_blank">✈ Telegram</a>
+<div class="support-inline" id="supportMenu">
+  <a href="https://wa.me/2348154206173" target="_blank">
+    💬 WhatsApp Support
+  </a>
+  <a href="https://t.me/Redpayagent1" target="_blank">
+    ✈ Telegram Support
+  </a>
 </div>
-
 <!-- promo carousel -->  
 <div class="promo-carousel" aria-label="Promotions">  
   <div class="carousel-track" id="carouselTrack">  
@@ -547,8 +550,15 @@ hr.sep{
   
     arrowRight.addEventListener('click', nextSlide);  
     arrowLeft.addEventListener('click', prevSlide);  
-    dots.forEach((d,i)=>d.addEventListener('click',()=>updateSlide(i))); 
+  dots.forEach((d,i)=>d.addEventListener('click',()=>updateSlide(i))); 
   
+    <script>
+function toggleSupport(){
+  const menu = document.getElementById("supportMenu");
+  menu.style.display =
+    menu.style.display === "block" ? "none" : "block";
+}
+</script>
     // autoplay every 2sec
     setInterval(nextSlide, 2000);  
   </script>
