@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Broadcast – Airtime Purchase</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #1a0000;
+        font-family: Arial, sans-serif;
+        color: white;
+    }
+
+    .container {
+        max-width: 420px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 28px;
+    }
+
+    .subtitle {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #cccccc;
+    }
+
+    .balance-box {
+        background: #330000;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        border: 2px solid #550000;
+        margin-bottom: 20px;
+    }
+
+    .balance-box span {
+        display: block;
+        font-size: 16px;
+        color: #cccccc;
+        margin-bottom: 10px;
+    }
+
+    .balance-amount {
+        font-size: 22px;
+        color: red;
+        font-weight: bold;
+    }
+
+    .toggle-box {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 20px 0;
+        font-size: 18px;
+    }
+
+    .toggle-box div {
+        cursor: pointer;
+        padding: 5px 15px;
+        border-radius: 20px;
+        background: #2a0000;
+        border: 1px solid #550000;
+    }
+
+    .red-icon {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    .red-icon div {
+        width: 80px;
+        height: 80px;
+        background: #550000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .red-icon img {
+        width: 40px;
+        filter: invert(22%) sepia(90%) saturate(5000%) hue-rotate(0deg);
+    }
+
+    label {
+        font-size: 16px;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        border: none;
+        background: #2a0000;
+        margin-bottom: 15px;
+        color: white;
+        font-size: 16px;
+        border: 1px solid #550000;
+    }
+
+    .warning {
+        font-size: 14px;
+        color: yellow;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 15px;
+        background: red;
+        color: white;
+        font-size: 18px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Broadcast</h1>
+    <div class="subtitle">Purchase airtime or data</div>
+
+    <div class="balance-box">
+        <span>Purchase your affordable airtime and data at a very cheap price</span>
+        <div class="balance-amount"></div>
+    </div>
+
+    <div class="toggle-box">
+        <div>Airtime</div>
+    </div>
+
+    <div class="red-icon">
+        <div>
+            📞
+        </div>
+    </div>
+
+    <label>Phone Number</label>
+    <input type="number" placeholder="08012345678">
+
+    <label>Amount (₦)</label>
+    <input type="number" placeholder="1000">
+
+    <label>Enter RPC Code</label>
+    <input type="password" placeholder="••••••">
+
+    <div class="warning">⚠ Access code is required to proceed</div>
+
+    <button class="btn" id="purchaseBtn">Purchase Airtime</button>
+
+</div>
+
+<script>
+document.getElementById('purchaseBtn').addEventListener('click', () => {
+    window.location.href = 'buyrpc.html';
+});
+</script>
+
+</body>
+</html>
+
