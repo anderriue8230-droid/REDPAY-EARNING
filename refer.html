@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refer & Earn</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #1a0000;
+        font-family: Arial, sans-serif;
+        color: white;
+    }
+
+    .container {
+        max-width: 450px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 30px;
+    }
+
+    .subtitle {
+        text-align: center;
+        color: #bbbbbb;
+        margin-bottom: 20px;
+    }
+
+    .stats-box {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+    }
+
+    .stat {
+        width: 48%;
+        background: #2a0000;
+        border: 1px solid #550000;
+        border-radius: 15px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .icon {
+        font-size: 35px;
+        margin-bottom: 10px;
+        opacity: 0.9;
+    }
+
+    .stat-value {
+        font-size: 26px;
+        font-weight: bold;
+        margin: 5px 0;
+    }
+
+    .stat-title {
+        font-size: 14px;
+        color: #cccccc;
+    }
+
+    .referral-box {
+        background: #330000;
+        padding: 20px;
+        border-radius: 15px;
+        border: 1px solid #550000;
+        margin-bottom: 25px;
+    }
+
+    .ref-link {
+        margin-top: 10px;
+        color: #ff4d4d;
+        word-break: break-all;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .how-box {
+        background: #2b0000;
+        padding: 20px;
+        border-radius: 15px;
+        border: 1px solid #550000;
+        margin-bottom: 25px;
+    }
+
+    .step {
+        margin-bottom: 15px;
+        line-height: 1.5;
+    }
+
+    .step-number {
+        background: red;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 50%;
+        margin-right: 10px;
+        font-weight: bold;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 15px;
+        border-radius: 12px;
+        font-size: 18px;
+        border: none;
+        margin-bottom: 15px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .btn.red {
+        background: red;
+        color: white;
+    }
+
+    .btn.dark {
+        background: #000;
+        color: white;
+        border: 1px solid #550000;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Refer & Earn</h1>
+    <div class="subtitle">Invite friends and earn rewards</div>
+
+    <div class="stats-box">
+        <div class="stat">
+            <div class="icon">👥</div>
+            <div class="stat-value">0</div>
+            <div class="stat-title">Total Referrals</div>
+        </div>
+
+        <div class="stat">
+            <div class="icon">🎁</div>
+            <div class="stat-value">₦0</div>
+            <div class="stat-title">Total Earnings</div>
+        </div>
+    </div>
+
+    <div class="referral-box">
+        <p>Share your link and earn ₦5,000 per referral</p>
+        <div class="ref-link" id="refLink">
+            https://redpay.com.co/?ref=UU518475254
+        </div>
+    </div>
+
+    <div class="how-box">
+        <h2>How It Works</h2>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            <strong>Share Your Code</strong><br>
+            Send your referral link to friends and family.
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <strong>They Sign Up</strong><br>
+            Your friend registers and purchases the RPC.
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <strong>Earn Rewards</strong><br>
+            Get ₦5,000 credited to your wallet instantly.
+        </div>
+    </div>
+
+    <button class="btn red" onclick="shareNow()">🔗 Share (Quick & Casual)</button>
+    <button class="btn dark" onclick="shareNow()">🔗 Share (Friendly Pitch)</button>
+    <button class="btn dark" onclick="shareNow()">🔗 Share (Short & Urgent)</button>
+
+</div>
+
+<script>
+function shareNow() {
+    const link = document.getElementById("refLink").innerText;
+
+    const message =
+        "Join RedPay and earn ₦5,000 instantly! Sign up using my referral link: " + link;
+
+    if (navigator.share) {
+        navigator.share({
+            title: "RedPay Referral",
+            text: message,
+            url: link
+        })
+        .catch(err => console.log("Share cancelled"));
+    } else {
+        alert("Sharing not supported on this browser. Copy link:\n" + link);
+    }
+}
+</script>
+
+</body>
+</html>
+
